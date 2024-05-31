@@ -1,0 +1,310 @@
+#:import ScreenManager kivy.uix.screenmanager 
+#:import MDScreen kivymd.uix.screen 
+
+ScreenManager:
+    id: sm
+	MainScreen:
+    InfoScreen:
+    CreditScreen:
+
+<InfoScreen@MDScreen>:
+    name: "info"
+    # md_bg_color: self.theme_cls.backgroundColor
+    md_bg_color: 0.0196,0.4275,0.3961,1
+    MDFloatLayout:
+        MDLabel:
+            text : "How to Use"
+            pos_hint: {"center_x": .5, "center_y": .87}
+            bold: True
+            text_color : "red" #self.theme_cls.primaryColor
+            theme_font_name: "Custom"
+            font_name: "assets/fonts/DMSerifDisplay-Regular.ttf"
+            text_color : 1,1,1,1
+            theme_font_size: "Custom"
+            font_size: "30dp"
+            halign : "center"
+        MDLabel:
+            text : "1. Click Convert to start\n\n2. Select one or many images by tapping them once\n\n3.  Second tap will deselect them\n\n4. If you want to convert\n   all the images in a folder, click the\n   All in folder checkbox and choose any one image"
+            pos_hint: {"x": .1, "top": 1}
+            theme_font_name: "Custom"
+            font_name: "assets/fonts/DMSerifDisplay-Regular.ttf"
+            text_color : 1,1,1,1
+            theme_font_size: "Custom"
+            font_size: "20dp"
+        MDButton:
+            id : otpbutton
+            style: "elevated"
+            pos_hint: {"center_x": .5, "center_y": 0.18}
+            # theme_bg_color: "Custom"
+            # md_bg_color: "brown"
+            ripple_scale: 0
+            on_press : app.showmainscreen()
+            
+            MDButtonText:
+                text: "Back"
+
+<CreditScreen@MDScreen>:
+    name: "credits"
+    # md_bg_color: self.theme_cls.backgroundColor
+    md_bg_color: 0.0196,0.4275,0.3961,1
+    MDFloatLayout:
+        MDLabel:
+            text : "Credits"
+            pos_hint: {"center_x": .5, "center_y": .97}
+            bold: True
+            text_color : "red" #self.theme_cls.primaryColor
+            theme_font_name: "Custom"
+            font_name: "assets/fonts/DMSerifDisplay-Regular.ttf"
+            text_color : 1,1,1,1
+            theme_font_size: "Custom"
+            font_size: "30dp"
+            halign : "center"
+        MDLabel:
+            text : "Fonts\n  DM Serif Display\n     Colophon Foundry - OFL\n  Jacquard24Charted\n     Sarah Cadigan-Fried - OFL\nBase code\n   Ravishankar Chavare - MIT\nimg2pdf - Johannes Schauer Marin Rodrigues - LGPL\nPillow\n   Jeffrey A. Clark - HPND \nFramework \n   Kivy,KivyMD,p4a - MIT\n\nGUI - https://techris.in\n\nDeveloped in Python"
+            pos_hint: {"x": .1, "y": 0.05}
+            theme_font_name: "Custom"
+            font_name: "assets/fonts/DMSerifDisplay-Regular.ttf"
+            text_color : 1,1,1,1
+            theme_font_size: "Custom"
+            font_size: "17dp"
+        MDButton:
+            id : otpbutton
+            style: "elevated"
+            pos_hint: {"center_x": .5, "center_y": 0.11}
+            # theme_bg_color: "Custom"
+            # md_bg_color: "brown"
+            ripple_scale: 0
+            on_press : app.showmainscreen()
+            
+            MDButtonText:
+                text: "Back"
+
+<MainScreen@MDScreen>:
+    name: "main"
+    # md_bg_color: self.theme_cls.backgroundColor
+    md_bg_color: 0.0196,0.4275,0.3961,1
+    
+    MDFloatLayout:
+        MDLabel:
+            text:     'Images to PDF'
+            halign: 'center'
+            pos_hint: {"center_x": 0.5 ,"center_y": 0.92}
+            theme_font_size: "Custom"
+            font_size: "58dp"
+            theme_text_color: 'Custom'
+            text_color: 1,1,1,1
+            theme_font_name: "Custom"
+            font_name: "assets/fonts/Jacquard24Charted-Regular.ttf"
+        
+        FitImage:
+            source: "assets/images/logo.png"
+            size_hint : [None,None]
+            width : "40sp"
+            height : "40sp"
+            pos_hint: {"x": 0.02, "y": 0.02}
+            # radius: self.width / 2
+
+        MDLabel:
+            id : infotext
+            text : ""
+            pos_hint: {"center_x": .5, "center_y": .5}
+            bold: True
+            text_color : "white" #self.theme_cls.primaryColor
+            theme_font_name: "Custom"
+            font_name: "assets/fonts/DMSerifDisplay-Regular.ttf"
+            text_color : 1,1,1,1
+            theme_font_size: "Custom"
+            font_size: "16dp"
+            halign : "center"
+
+    MDBoxLayout: #MDB1
+        orientation: "vertical"
+        padding : 10,20,20,20
+        # MDTopAppBar:
+        #     type: "small"
+        #     md_bg_color: self.theme_cls.backgroundColor
+
+            # MDTopAppBarLeadingButtonContainer:
+
+            #     MDActionTopAppBarButton:
+            #         icon: "plus"
+            #         theme_icon_color: "Custom"
+            #         icon_color : self.theme_cls.primaryColor
+                
+            # MDTopAppBarTitle:
+            #     text: "Instagram"
+            #     pos_hint: {"center_x": .5}
+            #     theme_font_size: "Custom"
+            #     font_size: "30dp"
+            #     # text_color : 1,0,0,1
+            #     text_color : self.theme_cls.primaryColor
+
+            # MDTopAppBarTrailingButtonContainer:
+
+            #     MDActionTopAppBarButton:
+            #         icon: "facebook-messenger"
+            #         theme_icon_color: "Custom"
+            #         icon_color : self.theme_cls.primaryColor
+
+        MDBoxLayout: #MDB1
+            # orientation: "vertical"
+            MDScrollView:  
+                bar_width: 0
+                MDBoxLayout:
+                    padding: 0, "100dp",0,0
+                    adaptive_height: True
+                    # padding: 0
+                    orientation: "vertical"
+                    id: timeline
+                    MDBoxLayout:
+                        # padding: 25, 10,5,10
+                        # orientation: "vertical"
+                        # size_hint : None, None
+                        # adaptive_width: True
+                        spacing: 20
+                        # size_hint: None, None
+                        # size: 60, 100
+                        MDFloatLayout:
+                            # orientation: "vertical"
+                            size_hint: None, None
+                            size: "70sp", "100sp"
+                            MDIconButton:
+                                icon: "image-album"
+                                style: "standard"
+                                theme_icon_color: "Custom"
+                                icon_color : [1,1,1,1]
+                                on_press : app.openfile()
+                                theme_font_size: "Custom"
+                                font_size: "38sp"
+                                # size_hint_x: .2
+                                pos_hint: {"center_x": 0.5 ,"center_y": .1}
+                                # MDBadge:
+                                #     text: "..."
+                                    # padding: 5
+                                # size_hint_y: 0.7
+                            MDLabel:
+                                text:     'Convert'
+                                halign: 'center'
+                                pos_hint: {"center_x": 0.5 ,"center_y": -0.5}
+                                font_size: "38sp"
+                                theme_text_color: 'Custom'
+                                text_color: 1,1,1,1
+                                # on_press : app.scanone()
+                                # padding : 0,200,2010.7
+                        MDFloatLayout:
+                            # orientation: "vertical"
+                            size_hint: None, None
+                            size: "70sp", "100sp"
+                            
+                            MDCheckbox:
+                                id : cb
+                                size_hint: None, None
+                                size: "48dp", "48dp"
+                                pos_hint: {'center_x': .5, 'center_y': .1}
+                                color_inactive: "white"
+                                color_active: "white"
+                                # theme_icon_color: "Custom"
+                                # icon_color : [1,1,1,1]
+                            
+                            MDLabel:
+                                text:     'All in Folder'
+                                halign: 'center'
+                                pos_hint: {"center_x": 0.5 ,"center_y": -0.5}
+                                font_size: "38sp"
+                                theme_text_color: 'Custom'
+                                text_color: 1,1,1,1
+                                # padding : 0,200,2010.7
+                        
+                        MDFloatLayout:
+                            # orientation: "vertical"
+                            size_hint: None, None
+                            size: "70sp", "100sp"
+                            MDIconButton:
+                                icon: "help"
+                                # icon : "assets/icons/line-scan-multiple.png"
+                                # style: "standard"
+                                theme_icon_color: "Custom"
+                                icon_color : [1,1,1,1]
+                                on_press : app.showinfo()
+                                theme_font_size: "Custom"
+                                font_size: "38sp"
+                                # size_hint_x: .2
+                                pos_hint: {"center_x": 0.5 ,"center_y": .1}
+                            
+                            MDLabel:
+                                text:     'Info'
+                                halign: 'center'
+                                pos_hint: {"center_x": 0.5 ,"center_y": -0.5}
+                                font_size: "38sp"
+                                theme_text_color: 'Custom'
+                                text_color: 1,1,1,1
+                        MDFloatLayout:
+                            # orientation: "vertical"
+                            size_hint: None, None
+                            size: "70sp", "100sp"
+                            MDIconButton:
+                                icon: "license"
+                                style: "standard"
+                                theme_icon_color: "Custom"
+                                icon_color : [1,1,1,1]
+                                theme_font_size: "Custom"
+                                on_press : app.showcredits()
+                                font_size: "38sp"
+                                size_hint_x: .2
+                                pos_hint: {"center_x": 0.5 ,"center_y": .1}
+                                # MDBadge:
+                                #     text: "..."
+                                    # padding: 5
+                                # size_hint_y: 0.7
+                            MDLabel:
+                                text:     'Credits'
+                                halign: 'center'
+                                pos_hint: {"center_x": 0.5 ,"center_y": -0.5}
+                                font_size: "38sp"
+                                theme_text_color: 'Custom'
+                                text_color: 1,1,1,1
+    
+    
+    MDFloatLayout:
+        MDLabel:
+            text : "For help in your python app development"
+            # text : "Enter valid email"
+            id : v2
+            pos_hint: {"center_x": .5, "center_y": .3}
+            bold: True
+            text_color : "white" #self.theme_cls.primaryColor
+            theme_font_size: "Custom"
+            font_size: "20dp"
+            halign : "center"
+        MDLabel:
+            text : "Techris Innovation Hub"
+            # text : "Enter valid email"
+            id : v2
+            pos_hint: {"center_x": .5, "center_y": .1}
+            bold: True
+            text_color : "white" #self.theme_cls.primaryColor
+            theme_font_size: "Custom"
+            font_size: "20dp"
+            halign : "center"
+            
+        MDButton:
+            id : otpbutton
+            style: "elevated"
+            pos_hint: {"center_x": .5, "center_y": 0.2}
+            # theme_bg_color: "Custom"
+            # md_bg_color: "brown"
+            ripple_scale: 0
+            on_press : app.visitmsm()
+            
+            MDButtonText:
+                text: "Contact Us now"
+        
+        
+
+
+    
+
+
+
+            
+        
