@@ -15,6 +15,11 @@ This code is available for the following platforms
 4. Raspberry Pi
 5. Libre board
 
+# How to use this app
+Visit [https://qsh](https://qsh) to know the how to use these apps
+
+# Help in your python app development
+
 If you need help in your python app development, please [Contact Us](https://techris.in/contact-us/)
 
 Techris Innovation Hub
