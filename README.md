@@ -1,4 +1,4 @@
-# Python GUI project Image to PDF converter
+# Python GUI project - Image to PDF converter
 A full free GUI app to converto images to pdf using python, kivy and kivyMD
 
 This app convert any number of images (png,jog,jpeg and tiff) without any limit to pdf format for free. 
@@ -12,8 +12,8 @@ Executable are available for the following platforms . Download them and install
 1. Linux - [Link](https://drive.google.com/file/d/1KACOMMmwXgR6HXQejBUzHo_4qb9q9F8p/view?usp=sharing)
 2. Android - [Link](https://drive.google.com/file/d/1HIREv7Qj8SSNJZsQnSHj4C9NE2FTLMTl/view?usp=drive_link)
 3. Windows - [Link](https://drive.google.com/file/d/1CV3VHW3empmx5LnjyJ8Xs5UjfwRTfLFN/view?usp=sharing)
-4. Raspberry Pi
-5. Libre board
+4. Raspberry Pi - [Link](https://drive.google.com/file/d/1fZGY5eJMXbPfsJHxjb5kjPwOqzD7-g1R/view?usp=sharing)
+5. Libre board - [Link](https://drive.google.com/file/d/1fZGY5eJMXbPfsJHxjb5kjPwOqzD7-g1R/view?usp=sharing)
 
 If you want to customise and use the python code instead, run the following code 
 
