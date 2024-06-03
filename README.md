@@ -15,6 +15,9 @@ Executable are available for the following platforms . Download them and install
 4. Raspberry Pi - [Link](https://drive.google.com/file/d/1fZGY5eJMXbPfsJHxjb5kjPwOqzD7-g1R/view?usp=sharing)
 5. Libre board - [Link](https://drive.google.com/file/d/1fZGY5eJMXbPfsJHxjb5kjPwOqzD7-g1R/view?usp=sharing)
 
+## How to open the file
+In Linux, Raspberry Pi and Libre board and windows, extract the contents of the zip file and double click the file **main**
+
 If you want to customise and use the python code instead, run the following code 
 
 python3 main.py 
