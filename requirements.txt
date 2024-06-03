@@ -7,7 +7,7 @@ docutils==0.21.2
 idna==3.7
 Kivy==2.3.0
 Kivy-Garden==0.1.5
-kivymd @ https://github.com/kivymd/KivyMD/archive/master.zip#sha256=6a2b43a3ee6659770c26334b6695167d2d343d50084353b1a4c422a9b8c430a1
+kivymd @ https://github.com/kivymd/KivyMD/archive/master.zip
 materialyoucolor==2.0.9
 packaging==24.0
 pillow==10.3.0
